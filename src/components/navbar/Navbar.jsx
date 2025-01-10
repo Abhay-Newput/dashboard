@@ -4,10 +4,9 @@ import {
   Flex,
   Text,
   IconButton,
-  Avatar,
   Input,
 } from '@chakra-ui/react';
-import { Search, Bell, Sun, UserRoundPen } from 'lucide-react'; // Ensure proper imports
+import { Search, Bell, UserRoundPen } from 'lucide-react'; // Ensure proper imports
 import { ColorModeButton } from '../ui/color-mode';
 
 const Navbar = () => {
@@ -19,6 +18,8 @@ const Navbar = () => {
       background="rgba(255, 255, 255, 0.7)" // Semi-transparent background
       borderRadius="0.5rem" // Rounded corners
       boxShadow="md"
+      border="2px solid black"
+      borderColor="gray.200"
       width={'70%'}
       position="fixed"
       top="8"
@@ -65,12 +66,8 @@ const Navbar = () => {
             <UserRoundPen size={20} color='black' />
           </IconButton>
 
-          {/* Avatar */}
-          {/* <Avatar name="User" size="sm" bg="blue.500" /> */}
         </Flex>
         </Flex>
-
-        {/* Icons */}
        
       </Flex>
     </Box>
