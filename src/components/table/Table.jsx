@@ -1,7 +1,19 @@
 import { Table } from "@chakra-ui/react";
-import items from "./constant";
+// import items from "./constant";
+import { useQuery } from "@tanstack/react-query";
+import { fetchTableData } from "../../api/api";
 
 const DashboardTable = () => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['tableData'],
+    queryFn: fetchTableData,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
+  console.log(data);
+
   return (
     <Table.ScrollArea borderWidth="1px" rounded="md" h={'300px'} >
         <Table.Root  size="sm" interactive border="2px solid #E2E8F0" showColumnBorder>
@@ -14,7 +26,7 @@ const DashboardTable = () => {
             </Table.Row>
         </Table.Header>
         <Table.Body>
-            {items.map((item) => (
+            {data.map((item) => (
             <Table.Row key={item.id}>
                 <Table.Cell>{item.name}</Table.Cell>
                 <Table.Cell>{item.progress}</Table.Cell>

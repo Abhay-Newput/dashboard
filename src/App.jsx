@@ -1,11 +1,14 @@
-import {Provider} from "./components/ui/provider"
-import Home from "./Pages/Home/Home"
-function App() {
+import { Provider } from './components/ui/provider'
+import { QueryProvider } from './utils/QueryProvider'
+import Home from './Pages/Home/Home'
 
+function App() {
   return (
-    <Provider>
-       <Home/>
-    </Provider>
+    <QueryProvider>
+      <Provider>
+        <Home />
+      </Provider>
+    </QueryProvider>
   )
 }
 

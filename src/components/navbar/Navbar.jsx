@@ -6,8 +6,8 @@ import {
   IconButton,
   Input,
 } from '@chakra-ui/react';
-import { Search, Bell, UserRoundPen } from 'lucide-react'; // Ensure proper imports
-import { ColorModeButton } from '../ui/color-mode';
+import { Search, Bell, UserRoundPen, Moon } from 'lucide-react'; // Ensure proper imports
+// import { ColorModeButton } from '../ui/color-mode';
 
 const Navbar = () => {
   return (
@@ -55,7 +55,8 @@ const Navbar = () => {
           </IconButton> 
           <Flex align="center" gap={1}>
           <IconButton aria-label="Toggle theme" bg="transparent">
-            <ColorModeButton />
+            {/* <ColorModeButton /> */}
+            <Moon size={20} color='black' />
           </IconButton>
 
           <IconButton aria-label="Notifications" bg="transparent">
